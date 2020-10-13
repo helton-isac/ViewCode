@@ -42,6 +42,17 @@ class WelcomeView: UIView, CodeView {
         return imageView
     }()
     
+    let titleLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "Welcome!"
+        label.textAlignment = .center
+        label.font = .title
+        label.textColor = .title
+        label.accessibilityIdentifier = "welcome-title-label"
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Super Methods
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -58,17 +69,18 @@ class WelcomeView: UIView, CodeView {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
         contentView.addSubview(mainImage)
+        contentView.addSubview(titleLabel)
     }
     
     func setupConstraints() {
         
-        // Layout Anchors
+        //Layout Anchors
         scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         scrollView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
         scrollView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
         
-        // ContentView
+        //ContentView
         contentView.topAnchor.constraint(equalTo: scrollView.topAnchor).isActive = true
         contentView.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: scrollView.widthAnchor).isActive = true
@@ -82,7 +94,11 @@ class WelcomeView: UIView, CodeView {
         mainImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: Margin.horizontal).isActive = true
         mainImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -Margin.horizontal).isActive = true
         mainImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
-        
+
+        //TitleLabel
+        titleLabel.topAnchor.constraint(equalTo: mainImage.bottomAnchor,constant: Margin.verticalVeryLarge).isActive = true
+        titleLabel.leadingAnchor.constraint(equalTo: mainImage.leadingAnchor).isActive = true
+        titleLabel.trailingAnchor.constraint(equalTo: mainImage.trailingAnchor).isActive = true
     }
     
     func setupExtraConfigurations() {
