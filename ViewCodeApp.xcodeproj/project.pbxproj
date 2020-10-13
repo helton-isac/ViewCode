@@ -11,6 +11,7 @@
 		9870AC652536606200BDB0B2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC642536606200BDB0B2 /* WelcomeViewController.swift */; };
 		9870AC6A2536606400BDB0B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9870AC692536606400BDB0B2 /* Assets.xcassets */; };
 		9870AC6D2536606400BDB0B2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9870AC6B2536606400BDB0B2 /* LaunchScreen.storyboard */; };
+		9870AC7F253661DF00BDB0B2 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC7E253661DF00BDB0B2 /* WelcomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		9870AC692536606400BDB0B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9870AC6C2536606400BDB0B2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9870AC6E2536606400BDB0B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9870AC7E253661DF00BDB0B2 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +74,18 @@
 		9870AC7B2536618C00BDB0B2 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
+				9870AC7D253661AF00BDB0B2 /* VIew */,
 				9870AC792536618400BDB0B2 /* Controller */,
 			);
 			path = Welcome;
+			sourceTree = "<group>";
+		};
+		9870AC7D253661AF00BDB0B2 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				9870AC7E253661DF00BDB0B2 /* WelcomeView.swift */,
+			);
+			path = VIew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9870AC652536606200BDB0B2 /* WelcomeViewController.swift in Sources */,
+				9870AC7F253661DF00BDB0B2 /* WelcomeView.swift in Sources */,
 				9870AC612536606200BDB0B2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
