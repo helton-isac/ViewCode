@@ -33,6 +33,15 @@ class WelcomeView: UIView, CodeView {
         return contentView
     }()
     
+    let mainImage: UIImageView = {
+        let imageView = UIImageView(frame: .zero)
+        imageView.image =  #imageLiteral(resourceName: "home")
+        imageView.contentMode = .scaleAspectFit
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     // MARK: - Super Methods
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -48,6 +57,7 @@ class WelcomeView: UIView, CodeView {
     func setupComponents() {
         addSubview(scrollView)
         scrollView.addSubview(contentView)
+        contentView.addSubview(mainImage)
     }
     
     func setupConstraints() {
@@ -66,9 +76,16 @@ class WelcomeView: UIView, CodeView {
         let contentViewHeightConstraint = contentView.heightAnchor.constraint(equalTo: scrollView.heightAnchor)
         contentViewHeightConstraint.priority = .defaultLow
         contentViewHeightConstraint.isActive = true
+        
+        //MainImage
+        mainImage.topAnchor.constraint(equalTo: contentView.topAnchor,constant: Margin.verticalVeryLarge).isActive = true
+        mainImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor,constant: Margin.horizontal).isActive = true
+        mainImage.trailingAnchor.constraint(equalTo: contentView.trailingAnchor,constant: -Margin.horizontal).isActive = true
+        mainImage.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3).isActive = true
+        
     }
     
     func setupExtraConfigurations() {
-        backgroundColor = .blue
+        backgroundColor = .view
     }
 }
