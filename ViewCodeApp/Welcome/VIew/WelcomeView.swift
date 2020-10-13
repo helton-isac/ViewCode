@@ -7,8 +7,28 @@
 
 import UIKit
 
-class WelcomeView: UIView {
+class WelcomeView: UIView, CodeView {
+    
+    init() {
+        super.init(frame: .zero)
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
     
     
-
+    
+    func setupComponents() {
+            
+    }
+    
+    func setupConstraints() {
+        
+    }
+    
+    func setupExtraConfigurations() {
+        
+    }
 }
