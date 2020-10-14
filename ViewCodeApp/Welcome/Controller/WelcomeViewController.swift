@@ -7,7 +7,10 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, HasCodeView {
+    
+    typealias CustomView = WelcomeView
+    
     override func loadView() {
         view = WelcomeView(delegate: self)
     }
@@ -31,14 +34,14 @@ class WelcomeViewController: UIViewController {
         guard let userInfo = notification.userInfo,
               let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
         
-        (view as? WelcomeView)?.scrollView.contentInset.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
-        (view as? WelcomeView)?.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        customView.scrollView.contentInset.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        customView.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
         
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        (view as? WelcomeView)?.scrollView.contentInset.bottom = 0
-        (view as? WelcomeView)?.scrollView.verticalScrollIndicatorInsets.bottom = 0
+        customView.scrollView.contentInset.bottom = 0
+        customView.scrollView.verticalScrollIndicatorInsets.bottom = 0
     }
     
 }

@@ -87,6 +87,17 @@ class WelcomeView: UIView, CodeView {
     let signUpButton = WelcomeButton(style: .secondary, title: "Sign Up")
     
     
+    let socialButtonsStackView: UIStackView = {
+        let stackView = UIStackView(frame: .zero)
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = Margin.horizontalSmall
+        return stackView
+    }()
+    
+    
 
     
     // MARK: - Super Methods

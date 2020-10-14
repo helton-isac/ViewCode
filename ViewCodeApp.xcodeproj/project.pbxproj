@@ -17,6 +17,7 @@
 		9870AC8E25366FC500BDB0B2 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC8D25366FC500BDB0B2 /* UIColor+RGB.swift */; };
 		9870AC9225367D7B00BDB0B2 /* WelcomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC9125367D7B00BDB0B2 /* WelcomeButton.swift */; };
 		9870AC962536858800BDB0B2 /* SocialButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC952536858800BDB0B2 /* SocialButton.swift */; };
+		9870AC992536889000BDB0B2 /* HasCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC982536889000BDB0B2 /* HasCodeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		9870AC8D25366FC500BDB0B2 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
 		9870AC9125367D7B00BDB0B2 /* WelcomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeButton.swift; sourceTree = "<group>"; };
 		9870AC952536858800BDB0B2 /* SocialButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialButton.swift; sourceTree = "<group>"; };
+		9870AC982536889000BDB0B2 /* HasCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HasCodeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				9870AC832536650300BDB0B2 /* CodeView.swift */,
+				9870AC982536889000BDB0B2 /* HasCodeView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -220,6 +223,7 @@
 				9870AC612536606200BDB0B2 /* AppDelegate.swift in Sources */,
 				9870AC842536650300BDB0B2 /* CodeView.swift in Sources */,
 				9870AC9225367D7B00BDB0B2 /* WelcomeButton.swift in Sources */,
+				9870AC992536889000BDB0B2 /* HasCodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
