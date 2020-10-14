@@ -185,7 +185,7 @@ class WelcomeView: UIView, CodeView {
         signUpButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
         
         //SocialButtonsStackView
-        socialButtonsStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Margin.verticalLarge).isActive = true
+        socialButtonsStackView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -Margin.verticalLarge).isActive = true
         socialButtonsStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         
         //FaceBook/Google Buttons
@@ -200,8 +200,8 @@ class WelcomeView: UIView, CodeView {
         backgroundColor = .view
         loginButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         signUpButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        //facebookButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-        //googleButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        facebookButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        googleButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
     }
     
     @objc private func buttonTapped(sender: UIButton) {
