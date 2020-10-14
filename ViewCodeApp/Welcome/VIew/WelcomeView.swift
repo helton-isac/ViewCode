@@ -64,6 +64,17 @@ class WelcomeView: UIView, CodeView {
         return label
     }()
     
+    let phoneTextField: UITextField = {
+        let textField = UITextField(frame: .zero)
+        textField.placeholder = "Phone"
+        textField.borderStyle = .roundedRect
+        textField.keyboardType = .phonePad
+        textField.textAlignment = .center
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+
+    
     // MARK: - Super Methods
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -82,6 +93,7 @@ class WelcomeView: UIView, CodeView {
         contentView.addSubview(mainImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(bodyLabel)
+        contentView.addSubview(phoneTextField)
     }
     
     func setupConstraints() {
@@ -122,6 +134,11 @@ class WelcomeView: UIView, CodeView {
         bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: Margin.verticalSmall).isActive = true
         bodyLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         bodyLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
+        
+        //PhoneTextField
+        phoneTextField.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: Margin.verticalLarge).isActive = true
+        phoneTextField.leadingAnchor.constraint(equalTo: bodyLabel.leadingAnchor).isActive = true
+        phoneTextField.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor).isActive  = true
     }
     
     func setupExtraConfigurations() {
