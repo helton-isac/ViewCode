@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  ViewCodeApp
+
+  Created by Helton Isac Torres Galindo on 13/10/20.
+  
+*/
+"WELCOME" = "Welcome!";
+"MAIN" = "Let's workout? Here you can create the perfect trainning!";
+"PHONE" = "Phone";
+"LOGIN_BUTTON" = "Login";
+"SIGNUP_BUTTON" = "Sign Up";
