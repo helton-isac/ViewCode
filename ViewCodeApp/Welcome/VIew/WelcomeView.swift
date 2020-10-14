@@ -85,6 +85,8 @@ class WelcomeView: UIView, CodeView {
     }()
     let loginButton = WelcomeButton(style: .main, title: "Login")
     let signUpButton = WelcomeButton(style: .secondary, title: "Sign Up")
+    
+    
 
     
     // MARK: - Super Methods
@@ -96,6 +98,7 @@ class WelcomeView: UIView, CodeView {
     // MARK: - Methods
     init(delegate: WelcomeViewDelegate) {
         super.init(frame: .zero)
+        self.delegate = delegate
         setup()
     }
     
@@ -168,5 +171,20 @@ class WelcomeView: UIView, CodeView {
     
     func setupExtraConfigurations() {
         backgroundColor = .view
+        loginButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        signUpButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        //facebookButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+        //googleButton.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func buttonTapped(sender: UIButton) {
+        switch sender {
+        case loginButton:
+            delegate?.loginButtonTapped(withPhone: phoneTextField.text!)
+        case signUpButton:
+            delegate?.signUpButtonTapped()
+        default:
+            break;
+        }
     }
 }

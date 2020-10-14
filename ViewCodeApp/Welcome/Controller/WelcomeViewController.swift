@@ -19,11 +19,11 @@ class WelcomeViewController: UIViewController {
 
 extension WelcomeViewController: WelcomeViewDelegate {
     func loginButtonTapped(withPhone: String) {
-        
+        print("Usuário tocou no botão de Login com o telefone")
     }
     
     func signUpButtonTapped() {
-    
+        print("Usuário tocou no botão de SignUp")
     }
     
     func facebookButtonTapped() {
