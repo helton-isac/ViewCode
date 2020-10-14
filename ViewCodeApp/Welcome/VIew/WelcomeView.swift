@@ -96,6 +96,8 @@ class WelcomeView: UIView, CodeView {
         stackView.spacing = Margin.horizontalSmall
         return stackView
     }()
+    let facebookButton = SocialButton(image: #imageLiteral(resourceName: "facebook"))
+    let googleButton = SocialButton(image: #imageLiteral(resourceName: "google"))
     
     
 
@@ -124,6 +126,9 @@ class WelcomeView: UIView, CodeView {
         buttonsStackView.addArrangedSubview(loginButton)
         buttonsStackView.addArrangedSubview(signUpButton)
         
+        contentView.addSubview(socialButtonsStackView)
+        socialButtonsStackView.addArrangedSubview(facebookButton)
+        socialButtonsStackView.addArrangedSubview(googleButton)
     }
     
     func setupConstraints() {
@@ -178,6 +183,17 @@ class WelcomeView: UIView, CodeView {
         loginButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
         loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         signUpButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
+        
+        //SocialButtonsStackView
+        socialButtonsStackView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: Margin.verticalLarge).isActive = true
+        socialButtonsStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        
+        //FaceBook/Google Buttons
+        facebookButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        facebookButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        googleButton.heightAnchor.constraint(equalTo: facebookButton.heightAnchor).isActive = true
+        
+        
     }
     
     func setupExtraConfigurations() {
