@@ -53,6 +53,17 @@ class WelcomeView: UIView, CodeView {
         return label
     }()
     
+    let bodyLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "Let's workout? Here you can create the perfect trainning!"
+        label.textAlignment = .center
+        label.font = .body
+        label.textColor = .body
+        label.numberOfLines = 0
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Super Methods
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -70,6 +81,7 @@ class WelcomeView: UIView, CodeView {
         scrollView.addSubview(contentView)
         contentView.addSubview(mainImage)
         contentView.addSubview(titleLabel)
+        contentView.addSubview(bodyLabel)
     }
     
     func setupConstraints() {
@@ -99,6 +111,11 @@ class WelcomeView: UIView, CodeView {
         titleLabel.topAnchor.constraint(equalTo: mainImage.bottomAnchor,constant: Margin.verticalVeryLarge).isActive = true
         titleLabel.leadingAnchor.constraint(equalTo: mainImage.leadingAnchor).isActive = true
         titleLabel.trailingAnchor.constraint(equalTo: mainImage.trailingAnchor).isActive = true
+        
+        //BodyLabel
+        bodyLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor,constant: Margin.verticalSmall).isActive = true
+        bodyLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        bodyLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
     }
     
     func setupExtraConfigurations() {
