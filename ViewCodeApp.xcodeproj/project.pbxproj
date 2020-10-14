@@ -20,6 +20,7 @@
 		9870AC992536889000BDB0B2 /* HasCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC982536889000BDB0B2 /* HasCodeView.swift */; };
 		9870AC9E25368D1B00BDB0B2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9870ACA025368D1B00BDB0B2 /* Localizable.strings */; };
 		9870ACA625368EBD00BDB0B2 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870ACA525368EBD00BDB0B2 /* Localization.swift */; };
+		9870ACA9253692D600BDB0B2 /* ViewCodeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870ACA8253692D600BDB0B2 /* ViewCodeComponent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9870ACA225368E0E00BDB0B2 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		9870ACA425368E1700BDB0B2 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9870ACA525368EBD00BDB0B2 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		9870ACA8253692D600BDB0B2 /* ViewCodeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCodeComponent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			children = (
 				9870AC8825366EF600BDB0B2 /* AppStyle.swift */,
 				9870ACA525368EBD00BDB0B2 /* Localization.swift */,
+				9870ACA8253692D600BDB0B2 /* ViewCodeComponent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				9870ACA625368EBD00BDB0B2 /* Localization.swift in Sources */,
 				9870AC842536650300BDB0B2 /* CodeView.swift in Sources */,
 				9870AC9225367D7B00BDB0B2 /* WelcomeButton.swift in Sources */,
+				9870ACA9253692D600BDB0B2 /* ViewCodeComponent.swift in Sources */,
 				9870AC992536889000BDB0B2 /* HasCodeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

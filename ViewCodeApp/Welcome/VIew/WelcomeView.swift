@@ -20,85 +20,99 @@ class WelcomeView: UIView, CodeView {
     // MARK: - Properties
     weak var delegate: WelcomeViewDelegate?
     
-    let scrollView: UIScrollView = {
+    @ViewCodeComponent
+    var scrollView: UIScrollView = {
         let scrollView = UIScrollView(frame: .zero)
-        scrollView.translatesAutoresizingMaskIntoConstraints = false
         scrollView.keyboardDismissMode = .interactive
         return scrollView
     }()
     
-    let contentView: UIView = {
+    @ViewCodeComponent
+    var contentView: UIView = {
         let contentView = UIView(frame: .zero)
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         return contentView
     }()
     
-    let mainImage: UIImageView = {
+    @ViewCodeComponent
+    var mainImage: UIImageView = {
         let imageView = UIImageView(frame: .zero)
         imageView.image =  #imageLiteral(resourceName: "home")
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
-        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    let titleLabel: UILabel = {
+    @ViewCodeComponent
+    var titleLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = Localization.welcome
         label.textAlignment = .center
         label.font = .title
         label.textColor = .title
         label.accessibilityIdentifier = "welcome-title-label"
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let bodyLabel: UILabel = {
+    @ViewCodeComponent
+    var bodyLabel: UILabel = {
         let label = UILabel(frame: .zero)
         label.text = Localization.main
         label.textAlignment = .center
         label.font = .body
         label.textColor = .body
         label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    let phoneTextField: UITextField = {
+    @ViewCodeComponent
+    var phoneTextField: UITextField = {
         let textField = UITextField(frame: .zero)
         textField.placeholder = Localization.phone
         textField.borderStyle = .roundedRect
         textField.keyboardType = .phonePad
         textField.textAlignment = .center
-        textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
     
-    let buttonsStackView: UIStackView = {
+    @ViewCodeComponent
+    var buttonsStackView: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = Margin.horizontalSmall
         return stackView
     }()
-    let loginButton = WelcomeButton(style: .main, title: Localization.loginButton)
-    let signUpButton = WelcomeButton(style: .secondary, title: Localization.signupSignupButtom)
+    @ViewCodeComponent
+    var loginButton = WelcomeButton(style: .main, title: Localization.loginButton)
+    @ViewCodeComponent
+    var signUpButton = WelcomeButton(style: .secondary, title: Localization.signupSignupButtom)
     
     
-    let socialButtonsStackView: UIStackView = {
+    @ViewCodeComponent
+    var socialButtonsStackView: UIStackView = {
         let stackView = UIStackView(frame: .zero)
         stackView.axis = .horizontal
         stackView.distribution = .fillEqually
         stackView.alignment = .center
-        stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.spacing = Margin.horizontalSmall
         return stackView
     }()
-    let facebookButton = SocialButton(image: #imageLiteral(resourceName: "facebook"))
-    let googleButton = SocialButton(image: #imageLiteral(resourceName: "google"))
+    @ViewCodeComponent
+    var facebookButton = SocialButton(image: #imageLiteral(resourceName: "facebook"))
+    @ViewCodeComponent
+    var googleButton = SocialButton(image: #imageLiteral(resourceName: "google"))
     
+    @ViewCodeComponent
+    var bottomLabel: UILabel = {
+        let label = UILabel(frame: .zero)
+        label.text = "Teste"
+        label.textAlignment = .center
+        label.font = .body
+        label.textColor = .body
+        label.numberOfLines = 0
+        return label
+    }()
     
 
     
@@ -129,6 +143,8 @@ class WelcomeView: UIView, CodeView {
         contentView.addSubview(socialButtonsStackView)
         socialButtonsStackView.addArrangedSubview(facebookButton)
         socialButtonsStackView.addArrangedSubview(googleButton)
+        
+        contentView.addSubview(bottomLabel)
     }
     
     func setupConstraints() {
@@ -189,9 +205,13 @@ class WelcomeView: UIView, CodeView {
         socialButtonsStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
         
         //FaceBook/Google Buttons
-        facebookButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        facebookButton.widthAnchor.constraint(equalToConstant: 50).isActive = true
         facebookButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         googleButton.heightAnchor.constraint(equalTo: facebookButton.heightAnchor).isActive = true
+        
+        bottomLabel.bottomAnchor.constraint(equalTo: socialButtonsStackView.topAnchor, constant: -Margin.verticalLarge)
+        bottomLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
+        bottomLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
         
         
     }
