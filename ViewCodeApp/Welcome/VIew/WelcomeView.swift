@@ -73,6 +73,18 @@ class WelcomeView: UIView, CodeView {
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
+    
+    let buttonsStackView: UIStackView = {
+        let stackView = UIStackView(frame: .zero)
+        stackView.axis = .horizontal
+        stackView.distribution = .fillEqually
+        stackView.alignment = .center
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.spacing = Margin.horizontalSmall
+        return stackView
+    }()
+    let loginButton = WelcomeButton(style: .main, title: "Login")
+    let signUpButton = WelcomeButton(style: .secondary, title: "Sign Up")
 
     
     // MARK: - Super Methods
@@ -94,6 +106,10 @@ class WelcomeView: UIView, CodeView {
         contentView.addSubview(titleLabel)
         contentView.addSubview(bodyLabel)
         contentView.addSubview(phoneTextField)
+        contentView.addSubview(buttonsStackView)
+        buttonsStackView.addArrangedSubview(loginButton)
+        buttonsStackView.addArrangedSubview(signUpButton)
+        
     }
     
     func setupConstraints() {
@@ -139,6 +155,15 @@ class WelcomeView: UIView, CodeView {
         phoneTextField.topAnchor.constraint(equalTo: bodyLabel.bottomAnchor, constant: Margin.verticalLarge).isActive = true
         phoneTextField.leadingAnchor.constraint(equalTo: bodyLabel.leadingAnchor).isActive = true
         phoneTextField.trailingAnchor.constraint(equalTo: bodyLabel.trailingAnchor).isActive  = true
+        
+        //ButtonsStackView
+        buttonsStackView.topAnchor.constraint(equalTo: phoneTextField.bottomAnchor, constant: Margin.verticalNormal).isActive = true
+        buttonsStackView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        
+        //Login/SignUp Buttons
+        loginButton.widthAnchor.constraint(equalToConstant: 120).isActive = true
+        loginButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        signUpButton.heightAnchor.constraint(equalTo: loginButton.heightAnchor).isActive = true
     }
     
     func setupExtraConfigurations() {

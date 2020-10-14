@@ -15,6 +15,7 @@
 		9870AC842536650300BDB0B2 /* CodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC832536650300BDB0B2 /* CodeView.swift */; };
 		9870AC8925366EF600BDB0B2 /* AppStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC8825366EF600BDB0B2 /* AppStyle.swift */; };
 		9870AC8E25366FC500BDB0B2 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC8D25366FC500BDB0B2 /* UIColor+RGB.swift */; };
+		9870AC9225367D7B00BDB0B2 /* WelcomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9870AC9125367D7B00BDB0B2 /* WelcomeButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		9870AC832536650300BDB0B2 /* CodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeView.swift; sourceTree = "<group>"; };
 		9870AC8825366EF600BDB0B2 /* AppStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStyle.swift; sourceTree = "<group>"; };
 		9870AC8D25366FC500BDB0B2 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		9870AC9125367D7B00BDB0B2 /* WelcomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				9870AC7B2536618C00BDB0B2 /* Welcome */,
 				9870AC82253664D800BDB0B2 /* Shared */,
 				9870AC692536606400BDB0B2 /* Assets.xcassets */,
+				9870AC9025367D5C00BDB0B2 /* Components */,
 				9870AC6B2536606400BDB0B2 /* LaunchScreen.storyboard */,
 				9870AC6E2536606400BDB0B2 /* Info.plist */,
 			);
@@ -127,6 +130,14 @@
 				9870AC8D25366FC500BDB0B2 /* UIColor+RGB.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		9870AC9025367D5C00BDB0B2 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9870AC9125367D7B00BDB0B2 /* WelcomeButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +215,7 @@
 				9870AC7F253661DF00BDB0B2 /* WelcomeView.swift in Sources */,
 				9870AC612536606200BDB0B2 /* AppDelegate.swift in Sources */,
 				9870AC842536650300BDB0B2 /* CodeView.swift in Sources */,
+				9870AC9225367D7B00BDB0B2 /* WelcomeButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
