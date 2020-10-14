@@ -15,6 +15,32 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        guard let userInfo = notification.userInfo,
+              let keyboardFrame = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        
+        (view as? WelcomeView)?.scrollView.contentInset.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        (view as? WelcomeView)?.scrollView.verticalScrollIndicatorInsets.bottom = keyboardFrame.size.height - view.safeAreaInsets.bottom
+        
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        (view as? WelcomeView)?.scrollView.contentInset.bottom = 0
+        (view as? WelcomeView)?.scrollView.verticalScrollIndicatorInsets.bottom = 0
+    }
+    
 }
 
 extension WelcomeViewController: WelcomeViewDelegate {
