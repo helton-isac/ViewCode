@@ -42,6 +42,8 @@ class WelcomeButton: UIButton {
         case .secondary:
             titleColor = .secondaryButtonText
             bgColor = .secondaryButton
+            layer.borderColor = UIColor.secondaryButtonBorder.cgColor
+            layer.borderWidth = 2
         }
         
         backgroundColor = bgColor
