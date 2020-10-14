@@ -86,7 +86,13 @@ class WelcomeView: UIView, CodeView {
     
     func setupConstraints() {
         
+        //NSLayoutContraints
+        
+        //VFL (Visual Format Language)
+        
         //Layout Anchors
+        
+        //ScrollView
         scrollView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor).isActive = true
         scrollView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor).isActive = true
         scrollView.widthAnchor.constraint(equalTo: widthAnchor).isActive = true
