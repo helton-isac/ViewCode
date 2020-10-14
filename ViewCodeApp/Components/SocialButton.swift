@@ -16,10 +16,8 @@ class SocialButton: UIButton {
     convenience init(image: UIImage) {
         self.init(frame: .zero)
         setImage(image, for: .normal)
-        layer.cornerRadius = 25
-        clipsToBounds = true
+        imageView?.layer.cornerRadius = 20
         translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     required init?(coder: NSCoder) {

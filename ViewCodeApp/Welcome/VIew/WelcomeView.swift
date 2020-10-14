@@ -106,7 +106,7 @@ class WelcomeView: UIView, CodeView {
     @ViewCodeComponent
     var bottomLabel: UILabel = {
         let label = UILabel(frame: .zero)
-        label.text = "Teste"
+        label.text = Localization.social
         label.textAlignment = .center
         label.font = .body
         label.textColor = .body
@@ -209,11 +209,9 @@ class WelcomeView: UIView, CodeView {
         facebookButton.heightAnchor.constraint(equalToConstant: 50).isActive = true
         googleButton.heightAnchor.constraint(equalTo: facebookButton.heightAnchor).isActive = true
         
-        bottomLabel.bottomAnchor.constraint(equalTo: socialButtonsStackView.topAnchor, constant: -Margin.verticalLarge)
+        bottomLabel.bottomAnchor.constraint(equalTo: socialButtonsStackView.topAnchor, constant: -Margin.verticalLarge).isActive = true
         bottomLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor).isActive = true
         bottomLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor).isActive = true
-        
-        
     }
     
     func setupExtraConfigurations() {

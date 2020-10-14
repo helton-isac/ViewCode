@@ -13,6 +13,7 @@ enum Localization {
     static let phone = "PHONE".localized
     static let loginButton = "LOGIN_BUTTON".localized
     static let signupSignupButtom = "SIGNUP_BUTTON".localized
+    static let social = "SOCIAL".localized
 }
 
 extension String {
